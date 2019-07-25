@@ -1,6 +1,6 @@
 
-class AppRouter < HyperComponent
 
+class AppRouter < HyperComponent
   
   include Hyperstack::Router::Helpers
   include Hyperstack::Router

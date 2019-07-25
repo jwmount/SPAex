@@ -1,4 +1,3 @@
-
 class UserIndex < HyperComponent
 
   render(DIV, class: 'mo-page') do
