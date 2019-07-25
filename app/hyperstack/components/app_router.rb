@@ -7,7 +7,7 @@ class AppRouter < HyperComponent
 
   render do
     DIV do
-      H1 {'Apps is us'}
+      H1 {'Apps is us. bit what about Dialog?'}
       # define routes using the Route psuedo component.  Examples:
       # Route('/foo', mounts: Foo)                : match the path beginning with /foo and mount component Foo here
       # Route('/foo') { Foo(...) }                : display the contents of the block
