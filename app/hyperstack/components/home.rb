@@ -1,7 +1,7 @@
 class Home < HyperComponent
   include Hyperstack::Component
   include Hyperstack::Router::Helpers
-  
+
   # param :my_param
   # param param_with_default: "default value"
   # param :param_with_default2, default: "default value" # alternative syntax
@@ -43,7 +43,7 @@ class Home < HyperComponent
   end
 
   render (DIV) do
-    H2 { 'Home' }
+    H2 { 'Home -- home.rb' }
   end
 
 end

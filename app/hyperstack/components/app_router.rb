@@ -15,11 +15,13 @@ class AppRouter < HyperComponent
 
   render (DIV) do
     UL do
-      LI { Link( '/' ) { 'Home' } }
       LI { Link( '/about' ) { 'About' }}
+      LI { Link( '/' ) { 'Home' } }
+      LI { Link( '/user_index') { ' Dialog ' } }
     end
-    Route( '/', exact: true, mounts: Home )
     Route( '/about', mounts: About )
+    Route( '/', exact: true, mounts: Home )
+    Route( 'user_index', mounts: UserIndex)
   end
 end
 
