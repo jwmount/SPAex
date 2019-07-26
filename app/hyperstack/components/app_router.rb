@@ -1,5 +1,4 @@
 
-
 class AppRouter < HyperComponent
   
   include Hyperstack::Router::Helpers
