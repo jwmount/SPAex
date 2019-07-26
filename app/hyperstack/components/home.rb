@@ -1,5 +1,7 @@
-class SPAex < HyperComponent
-
+class Home < HyperComponent
+  include Hyperstack::Component
+  include Hyperstack::Router::Helpers
+  
   # param :my_param
   # param param_with_default: "default value"
   # param :param_with_default2, default: "default value" # alternative syntax
@@ -40,10 +42,9 @@ class SPAex < HyperComponent
     # automatically
   end
 
-  render do
-    DIV do
-      'SPAex'
-    end
+  render (DIV) do
+    H2 { 'Home' }
   end
+
 end
 
