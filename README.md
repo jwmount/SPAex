@@ -4,13 +4,28 @@
 
 ## Stage One
 
-- /DEVO/rails new SPAex -T DATABASE=postgresql
+- /DEVO/rails new SPAex-alt -T --database=postgresql
 - cd SPAex
 
+## TRIAL:  CREATE A FULL RAILS SCAFFOLD
+
+- rails g scaffold User last_name first_name gender:boolean:false
+
 - bundle add 'rails-hyperstack' --version "~> 1.0.alpha1.0" (CR)  add the rails-hyperstack gem to Gemfile
+
 - bundle install
 
 - bundle exec rails hyperstack:install
+
+- bundle install
+
+### Create and migrate User table
+- rake db:create db:migrate
+
+### Create a user
+- rake db:seed
+
+- bundle exec foreman start
 
 - URL:  localhost:5000  (CR)  This will compile Webpack and takes 3-4 minutes; see 'App' in ULC of page
 

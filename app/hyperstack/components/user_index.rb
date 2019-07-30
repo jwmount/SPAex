@@ -2,17 +2,19 @@ class UserIndex < HyperComponent
 
   render(DIV, class: 'mo-page') do
     
-    UserDialog(user: User.new) # this will render as a button to add users
+    @user = User.new(first_name: 'George', last_name: 'Smith', gender: false)
+    UserDialog(@user)
+    #UserDialog(user: User.new) # this will render as a button to add users
 
-    Table do
-      TableHead do
-        TableRow do
-          TableCell { 'Name' }
-          TableCell { 'Gender' }
-          TableCell { 'Edit' }
+    TABLE do
+      THEAD do                   #TABLEHEAD do               #TableHead do
+        TR do                    #TABLEROW do              #TableRow do
+          TH { 'Name' }          #TableCell { 'Name' }
+          TH { 'Gender' }        #TABLECELL { 'Gender'}  #TableCell { 'Gender' }
+          TH { 'Edit' }          #TABLECELL { 'Edit' }   #TableCell { 'Edit' }
         end
       end
-      TableBody do
+      TBODY do                   #TABLEBODY do               #TableBody do
         user_rows
       end
     end
@@ -20,10 +22,10 @@ class UserIndex < HyperComponent
 
   def user_rows
     User.each do |user| # note User is a Hyperstack model (see later in the Isomorphic section)
-      TableRow do
-        TableCell { "#{user.first_name} #{user.last_name}" }
-        TableCell { user.is_female ? 'Female' : 'Male' }  #note the use of key so React knows which Component this refers to
-        TableCell { UserDialog( user: user, key: user.id) } # this will render as an edit button
+      TR do        #TableRow do
+        TD { "#{user.first_name} #{user.last_name}" } #was TableCell {}
+        TD { user.gender ? 'Female' : 'Male' }      #was TableCell{}, note the use of key so React knows which Component this refers to
+        TD { UserDialog( user: user, key: user.id) }   #was TableCell {} this will render as an edit button
       end
     end
   end

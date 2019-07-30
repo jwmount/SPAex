@@ -61,3 +61,5 @@ group :development do
 end
 
 gem 'webpacker'
+group :development do
+end

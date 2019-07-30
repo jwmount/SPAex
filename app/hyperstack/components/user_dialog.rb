@@ -14,7 +14,7 @@ class UserDialog < HyperComponent
 	end
 
     def render_dialog
-    	Dialog(open: @open, fullWidth: false) do
+        Dialog( open: @open, fullWidth: false ) do
     		DialogTitle do
     		  'User'
     		end
@@ -29,10 +29,12 @@ class UserDialog < HyperComponent
     end
 
     def edit_or_new_button
-    	if user.new?
-    		Fab(size: :small, color: :secondary) { Icon { 'add' } }
+    	if false #user.new?
+    		#Fab(size: :small, color: :secondary) { Icon { 'add' } }. Fab is Floating Action Button in React
+    		BUTTON(size: :small, color: :secondary) { H4 { 'add' } }
     	else
-    		Fab(size: :small, color: :secondary) { Icon { 'settings' } }
+    		#Fab(size: :small, color: :secondary) { Icon { 'settings' } }
+    		BUTTON(size: :small, color: :secondary) { H4 { 'settings' } }
     	end
     end
 
@@ -64,11 +66,10 @@ class UserDialog < HyperComponent
 	 	value ? true : false
 	 end
 
-
 	 def actions
-	 	Button { 'Cancel' }.on(:click) { cancel }
+	 	BUTTON { 'Cancel' }.on(:click) { cancel }
 	 	if user.changed? && validate_content
-	 		Button(color: :primary, variant: :contianed, disabled: (user.saving? ? tgrue : false)) do
+	 		BUTTON(color: :primary, variant: :contianed, disabled: (user.saving? ? tgrue : false)) do
 	 			'Save'
 	 		end.on(:click) { save }
 	 end

@@ -1,6 +1,4 @@
 class Home < HyperComponent
-  include Hyperstack::Component
-  include Hyperstack::Router::Helpers
 
   # param :my_param
   # param param_with_default: "default value"
